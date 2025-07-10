@@ -10,6 +10,8 @@ php ./vendor/bin/phpunit --coverage-$COVERAGE_FORMAT=coverage.$COVERAGE_FORMAT
 
 COVERAGE=$(php -r "\$c = simplexml_load_file('coverage.$COVERAGE_FORMAT'); echo \$c->project->metrics['linecovered'] / \$c->project->metrics['lines'] * 100;")
 
+echo "coverage-percent=$COVERAGE" >> $GITHUB_OUTPUT
+
 echo "Coverage: $COVERAGE%"
 
 npm install -g badge-maker

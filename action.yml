@@ -1,0 +1,30 @@
+name: 'PHP Unit Coverage calculate Action'
+description: 'Run PHP Unit tests and calculate code coverage'
+author: 'Glomberg'
+
+inputs:
+  php-version:
+    description: 'PHP version to use'
+    required: false
+    default: '8.2'
+  coverage-format:
+    description: 'Coverage format (clover, html)'
+    required: false
+    default: 'clover'
+  min-coverage:
+    description: 'Minimum required coverage percentage'
+    required: false
+    default: '80'
+outputs:
+  coverage-percent:
+    description: 'The calculated coverage percentage'
+    value: ${{ steps.coverage.outputs.coverage-percent }}
+runs:
+  using: 'composite'
+  steps:
+    - run: ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        PHP_VERSION: ${{ inputs.php-version }}
+        COVERAGE_FORMAT: ${{ inputs.coverage-format }}
+        MIN_COVERAGE: ${{ inputs.min-coverage }}

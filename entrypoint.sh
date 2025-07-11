@@ -4,7 +4,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
 composer install
 
-php $COVERAGE_FORMAT --coverage-$COVERAGE_FORMAT=coverage.$COVERAGE_FORMAT
+php $PHPUNIT_COMMAND --coverage-$COVERAGE_FORMAT=coverage.$COVERAGE_FORMAT
 
 COVERAGE=$(php -r "\$c = simplexml_load_file('coverage.$COVERAGE_FORMAT'); echo \$c->project->metrics['linecovered'] / \$c->project->metrics['lines'] * 100;")
 

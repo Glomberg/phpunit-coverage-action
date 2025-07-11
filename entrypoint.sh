@@ -18,6 +18,7 @@ npm install -g badge-maker
 echo "Generate badge"
 node ./generate-badge.js $COVERAGE
 
+echo "Commit badge"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add coverage.svg

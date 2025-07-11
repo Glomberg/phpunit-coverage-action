@@ -26,6 +26,6 @@ runs:
     - run: ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
-        PHP_VERSION: ${{ inputs.php-version }}
+        PHPUNIT_COMMAND: ${{ inputs.phpunit-command }}
         COVERAGE_FORMAT: ${{ inputs.coverage-format }}
         MIN_COVERAGE: ${{ inputs.min-coverage }}

@@ -3,10 +3,6 @@ description: 'Run PHP Unit tests and calculate code coverage'
 author: 'Glomberg'
 
 inputs:
-  php-version:
-    description: 'PHP version to use'
-    required: false
-    default: '8.2'
   coverage-format:
     description: 'Coverage format (clover, html)'
     required: false
@@ -15,6 +11,9 @@ inputs:
     description: 'Minimum required coverage percentage'
     required: false
     default: '80'
+  phpunit-command:
+    description: 'PhpUnit command you used'
+    required: true
 outputs:
   coverage-percent:
     description: 'The calculated coverage percentage'

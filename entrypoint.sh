@@ -15,7 +15,7 @@ echo "coverage-percent=$COVERAGE" >> $GITHUB_OUTPUT
 echo "Coverage: $COVERAGE%"
 
 npm install -g badge-maker
-badge -p "coverage" -v "$COVERAGE%" -c "#4c1" -f coverage.svg
+node ./generate-badge.js $COVERAGE
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"

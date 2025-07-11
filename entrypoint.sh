@@ -16,7 +16,7 @@ echo "➡️ Coverage: $COVERAGE%"
 
 npm install -g badge-maker
 echo "➡️ Generate badge"
-node generate-badge.js $COVERAGE
+node $BADGE_GENERATOR $COVERAGE
 
 echo "➡️ Commit badge"
 git config --global user.name "GitHub Actions"

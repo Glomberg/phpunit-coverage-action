@@ -29,3 +29,4 @@ runs:
         PHPUNIT_COMMAND: ${{ inputs.phpunit-command }}
         COVERAGE_FORMAT: ${{ inputs.coverage-format }}
         MIN_COVERAGE: ${{ inputs.min-coverage }}
+        BADGE_GENERATOR: ${{ github.action_path }}/generate-badge.js
